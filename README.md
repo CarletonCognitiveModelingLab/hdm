@@ -78,20 +78,16 @@ The default threshold of -4.6 is converted to a cosine of 0.1.
 
 NEW PARAMETERS UNIQUE TO HDM
 
-1. **N**
-N is the vector dimensionality. Defaults to 512 dimensions, which is plenty. We recommend setting N to values in the range from 32 to 2048. Smaller dimensions introduce more noise and error into the model. 32 dimensions will introduce a high amount of noise/error for small study sets. 2048 dimensions allows for good recall for millions of items. 
-2. **verbose**
-Defaults to false. When set to true, HDM reports its internal computations, allowing the user to understand what HDM is doing.
-3. **forgetting**
-forgetting controls the forgetting rate due to retroactive inhibition
+1. **N** is the vector dimensionality. Defaults to 512 dimensions, which is plenty. We recommend setting N to values in the range from 32 to 2048. Smaller dimensions introduce more noise and error into the model. 32 dimensions will introduce a high amount of noise/error for small study sets. 2048 dimensions allows for good recall for millions of items. 
+2. **verbose** defaults to false. When set to true, HDM reports its internal computations, allowing the user to understand what HDM is doing.
+3. **forgetting** controls the forgetting rate due to retroactive inhibition
 range [0 to 1]
 1 = no forgetting
 0 = no remembering
 When updating memory:
 memory vector =  forgetting * memory vector + new information vector
 
-4. **noise**
-noise controls the amount of noise added to memory per time step. Gaussian noise is added to all memory vectors whenever Request or Add is called.
+4. **noise** controls the amount of noise added to memory per time step. Gaussian noise is added to all memory vectors whenever Request or Add is called.
 When adding noise:
 memory vector = memory vector + noise * time since last update * noise vector
 Noise ranges from [0 ... ], where 0 is no noise and more is more noise

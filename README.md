@@ -65,16 +65,16 @@ DM.set('customer1', DM.get('moustache') + DM.get('blond') + DM.get('long_hair') 
 
 PARAMETERS OF HDM SHARED WITH DM
 
-1. buffer
-2. latency
-3. threshold
+1. **buffer**
+2. **latency**
+3. **threshold**
 As in DM, threshold is the minimum activation threshold for a chunk to be retrieved. We recommend using lower thresholds for HDM than is standard for DM. The default threshold for DM is 0. The default threshold for HDM is -4.6. 
 Internally, HDM uses cosines, which approximate the square root of the probability. Conversely DM uses log odds as activation. For compatibility with DM, the threshold parameter is in logodds. It is immediately converted to a cosine for internal use by HDM.
 The default threshold of -4.6 is converted to a cosine of 0.1.
 
-4. maximum_time
-5. finst_size
-6. finst_time
+4. **maximum_time**
+5. **finst_size**
+6. **finst_time**
 
 NEW PARAMETERS UNIQUE TO HDM
 
